@@ -10,8 +10,9 @@
 
 #import "AppDelegate.h"
 #import "GameConfig.h"
-#import "HelloWorldLayer.h"
+#import "ActionLayer.h"
 #import "RootViewController.h"
+#import "chipmunk.h"
 
 @implementation AppDelegate
 
@@ -109,8 +110,10 @@
 	// Removes the startup flicker
 	[self removeStartupFlicker];
 	
+    cpInitChipmunk();
+    
 	// Run the intro Scene
-	[[CCDirector sharedDirector] runWithScene: [HelloWorldLayer scene]];
+	[[CCDirector sharedDirector] runWithScene: [ActionLayer scene]];
 }
 
 
